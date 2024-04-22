@@ -1,3 +1,5 @@
+
+//Creat a tree and print it in inorder
 #include <stdio.h>
 
 struct Node  //creat struct
