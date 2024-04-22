@@ -1,3 +1,4 @@
+//print all path from sourse to destination
 #include <stdio.h>
 
 struct Node // creat a struct
