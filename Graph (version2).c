@@ -67,7 +67,7 @@ void findpath (struct Node * p, int count, int start, int end, int * list, int *
         for (i=0;i<lcount;i++)
         {
             printf (" %d ", list[i]);
-            tcost += clist[i];
+            tcost += clist[i];        // summation of the cost
         }
         printf (" cost = %d", tcost);
         return;
@@ -98,7 +98,7 @@ int main() {
 
     struct Node nodes[50];
     int nodecount = 0;
-    int n1=0, n2=0, c = 0; // n1 = first node, n2 = second node , c = cost of n1 to n2 node
+    int n1=0, n2=0, c = 0;      // n1 = first node, n2 = second node , c = cost of n1 to n2 node
 
     while (1)
     {
@@ -112,13 +112,14 @@ int main() {
         addAdjacent (&nodes[0], n2, n1, c, nodecount);
     }
 
-    int start; //starting node where we start to go
-    int end; //ending node where we end to go
+    int start;        //starting node where we start to go
+    int end;          //ending node where we end to go
     printf ("start, end ? ");
     scanf ("%d %d", &start, &end);
     int list[50], clist[50], lcount = 0;
     list[0] = start; clist[0] = 0; lcount = 1;
 
+    //using the findpath function to find a path.
     findpath (nodes, nodecount, start, end, list, clist, lcount);
 
     return 0;
